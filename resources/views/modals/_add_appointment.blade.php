@@ -1,4 +1,4 @@
-    <!--popOut RENDEZ-VOUS model -->
+<!--popOut RENDEZ-VOUS model -->
 
     <div class="modal fade" id="modal_add_appointment">
         <div class="modal-dialog">
@@ -38,9 +38,17 @@
                                     <div class="form-group">
                                         <label>Patient</label>
                                         <div class="model-field__control">
-                                            <select name='patient_id'
-                                                class=" form-control select2-patient-ajax"></select>
-                                        </div>
+                                             @if (\App\Enums\UserRoles::isSecretary(Auth::user()->role) || \App\Enums\UserRoles::isAdmin(Auth::user()->role))
+                                                 <select name='patient_id' class="form-control">
+                                                     @foreach ($patients as $patient)
+                                                         <option value="{{ $patient->id }}">{{ $patient->name }} {{ $patient->lastname }}</option>
+                                                     @endforeach
+                                                 </select>
+                                             @else
+                                                 <select name='patient_id'
+                                                     class=" form-control select2-patient-ajax"></select>
+                                             @endif
+                                         </div>
                                     </div>
                                 </div>
                             </div>
@@ -48,9 +56,9 @@
                                 <div class="col-sm">
                                     <div class="model-field">
                                         <div class="model-field__control">
-                                            <textarea id="motivation" name="motivation" type="text" class=" form-field__textarea form-control"
-                                                placeholder="motivation" required></textarea>
-                                            {{-- <label for="motivation" class="model-field__label">motivation</label> --}}
+                                            <textarea id="reason" name="reason" type="text" class=" form-field__textarea form-control"
+                                                placeholder="reason" required></textarea>
+                                            {{-- <label for="reason" class="model-field__label">reason</label> --}}
                                             <div class="model-field__bar"></div>
                                         </div>
                                     </div>
@@ -62,9 +70,9 @@
                                 <div class="col-sm">
                                     <div class="model-field">
 
-                                        <div class="input-group date" id="date" name="date"
+                                        <div class="input-group date" id="appointment_date" name="appointment_date"
                                             data-target-input="nearest">
-                                            <input type="date" name="date" class="form-control "
+                                            <input type="date" name="appointment_date" class="form-control "
                                                 data-target="#date" placeholder=" Date of birth" required />
                                             <div class="input-group-append" data-target="#date"
                                                 data-toggle="datetimepicker">

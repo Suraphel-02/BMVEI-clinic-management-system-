@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('date');
-            $table->time('start_time');
-            $table->time('end_time');
-            $table->text('motivation');
+            $table->dateTime('date');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
+            $table->text('reason');
         });
     }
 

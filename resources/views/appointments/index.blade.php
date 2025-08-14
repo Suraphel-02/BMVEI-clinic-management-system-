@@ -22,10 +22,13 @@
                                         Start time</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                                        end time</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                        colspan="1" aria-label="Engine version: activate to sort column ascending">
-                                        motivation</th>
+                                         end time</th>
+                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                         colspan="1" aria-label="Engine version: activate to sort column ascending">
+                                         Patient Name</th>
+                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                         colspan="1" aria-label="Engine version: activate to sort column ascending">
+                                         reason</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                         actions</th>
@@ -42,21 +45,27 @@
                                             {{ $appointment['date'] }}</td>
                                         <td>{{ $appointment['start_time'] }}</td>
                                         <td>{{ $appointment['end_time'] }}</td>
-                                        <td class="truncate">{{ $appointment['motivation'] }}</td>
+                                         <td>{{ $appointment->patient->name }} {{ $appointment->patient->lastname }}</td>
+                                         <td class="truncate">{{ $appointment['reason'] }}</td>
 
                                         <td
                                             style="padding-right: -3.25rem;border-right-width: 0px;height: 37px;width: 95.833px;">
-                                            TBD later
-                                            {{-- <a href="{{ route('scans.show', [$appointment->id]) }}"
-                                            class="btn btn-profile btn-del"
-                                            style="height: 41px;min-width: 46px;margin: 0px;padding: 0px;"
-                                            title="preview"><i class="fas fa-external-link-alt"></i></a>
-
-                                        <a href="{{ route('scans.download', $appointment->id) }}"
-                                            class="btn btn-app btn-modify"
-                                            style="height: 41px;min-width: 46px;margin: 0px;padding: 0px;">
-                                            <i class="fas fa-download"></i>
-                                        </a> --}}
+                                            <a href="{{ route('appointment.edit', $appointment->id) }}"
+                                                class="btn btn-info btn-sm"
+                                                style="height: 41px;min-width: 46px;margin: 0px;padding: 0px;"
+                                                title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <form action="{{ route('appointment.destroy', $appointment->id) }}" method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('Are you sure you want to delete this appointment?')"
+                                                    style="height: 41px;min-width: 46px;margin: 0px;padding: 0px;"
+                                                    title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
 
                                         </td>
                                     </tr>

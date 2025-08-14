@@ -1,4 +1,4 @@
-    <!--popOut add user  model -->
+<!--popOut add user  model -->
     <div class="modal fade" id="modal-add-patient">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -53,12 +53,15 @@
                                 <div class="col-sm">
                                     <div class="model-field">
                                         <div class="model-field__control">
-                                            <input type="number" id="noSSocial" name="noSSocial"
-                                                class=" @error('noSSocial') error-border @enderror model-field__input form-control"
-                                                value="{{ old('noSSocial') }}" placeholder=" " required />
-                                            <label for="noSSocial" class="model-field__label">social security
-                                                number</label>
-                                            @error('noSSocial')
+                                            <select id="sex" name="sex"
+                                                class=" @error('sex') error-border @enderror model-field__input form-control"
+                                                required>
+                                                <option value="" disabled selected>Select Sex</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <label for="sex" class="model-field__label">Sex</label>
+                                            @error('sex')
                                                 <div class="error">{{ $message }}</div>
                                             @enderror
                                             <div class="model-field__bar"></div>

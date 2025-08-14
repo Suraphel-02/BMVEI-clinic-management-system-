@@ -32,11 +32,12 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="noSSocial">Social security number</label>
-                    <input type="number" id="noSSocial" name="noSSocial"
-                        class=" @error('noSSocial') error-border @enderror  form-control"
-                        value="{{ old('noSSocial', $patient->noSSocial) }}" placeholder=" " required />
-                    @error('noSSocial')
+<label for="sex">Sex</label>
+<select id="sex" name="sex" class=" @error('sex') error-border @enderror form-control" required>
+    <option value="Male" {{ old('sex', $patient->sex) == 'Male' ? 'selected' : '' }}>Male</option>
+    <option value="Female" {{ old('sex', $patient->sex) == 'Female' ? 'selected' : '' }}>Female</option>
+</select>
+@error('sex')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>

@@ -19,13 +19,13 @@ class PatientFactory extends Factory
         return [
             'name' => fake()->name(),
             'lastname' => fake()->name(),
-            'noSSocial' => fake()->numberBetween(10, 20),
+            'medical_history' => fake()->sentence(),
             'dob' => fake()->date('Y_m_d'),
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->phoneNumber(),
             'diseases' => fake()->sentence(),
             'allergies' => fake()->sentence(),
-            'antecedents' => fake()->sentence(),
+
             'comments' => fake()->paragraph(),
         ];
     }

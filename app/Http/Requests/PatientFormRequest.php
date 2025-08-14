@@ -26,13 +26,13 @@ class PatientFormRequest extends FormRequest
         return [
             'name' => 'required',
             'lastname' => 'required',
-            'noSSocial' =>  'required',
+            'sex' =>  'required',
             'dob' =>  'required',
             'email' =>  'required',
             'phone' =>  'required',
             'diseases' => 'nullable|string',
             'allergies' => 'nullable|string',
-            'antecedents' => 'nullable|string',
+            'medical_history' => 'nullable|string',
             'comments' => 'nullable|string',
 
         ];

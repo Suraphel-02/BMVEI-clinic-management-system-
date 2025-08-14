@@ -18,7 +18,7 @@ class AppointmentFactory extends Factory
     {
         return [
             'date' => fake()->date('Y_m_d'),
-            'motivation' => fake()->paragraph(),
+            'reason' => fake()->paragraph(),
             'patient_id' => fake()->numberBetween(1, 5),
             'user_id' => fake()->numberBetween(1, 2),
             'start_time'=>fake()->time(),

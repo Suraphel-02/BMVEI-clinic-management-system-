@@ -36,9 +36,11 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="noSSocial">Social security number</label>
-                                <input id="noSSocial" name="noSSocial" type="text" class=" form-control"
-                                    value="{{ old('noSSocial', $patient->noSSocial) }}" />
+                                <label for="sex">Sex</label>
+                                <select id="sex" name="sex" class="form-control">
+                                    <option value="Male" {{ old('sex', $patient->sex) == 'Male' ? 'selected' : '' }}>Male</option>
+                                    <option value="Female" {{ old('sex', $patient->sex) == 'Female' ? 'selected' : '' }}>Female</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -108,7 +110,7 @@
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Engine version: activate to sort column ascending">
-                                                motivation</th>
+                                                reason</th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 actions</th>
@@ -125,7 +127,7 @@
                                                     {{ $appointment['date'] }}</td>
                                                 <td>{{ $appointment['start_time'] }}</td>
                                                 <td>{{ $appointment['end_time'] }}</td>
-                                                <td class="truncate">{{ $appointment['motivation'] }}</td>
+                                                <td class="truncate">{{ $appointment['reason'] }}</td>
                                                 <td
                                                     style="padding-right: -3.25rem;border-right-width: 0px;height: 37px;width: 95.833px;">
                                                     TBD later
@@ -256,8 +258,8 @@
                                 placeholder=" " value="{{ old('name', $patient->name) }}" hidden />
                             <input id="lastname" name="lastname" type="text" class=" form-field__input"
                                 value="{{ old('lastname', $patient->lastname) }}" hidden />
-                            <input id="noSSocial" name="noSSocial" type="text" class=" form-field__input"
-                                value="{{ old('noSSocial', $patient->noSSocial) }}" hidden />
+                            <input id="sex" name="sex" type="text" class=" form-field__input"
+                                value="{{ old('sex', $patient->sex) }}" hidden />
                             <input type="date" name="dob" required value="{{ old('dob', $patient->dob) }}"
                                 hidden />
                             <input id="email" name="email" type="text" class=" form-field__input"
@@ -277,8 +279,8 @@
                                     value="{{ old('allergies', $patient->allergies) }}" />
                             </div>
                             <div class="form-group">
-                                <label for="antecedents">Antecedents</label>
-                                <textarea name="antecedents" id="antecedents" cols="30" rows="5" class="form-control">{{ old('antecedents', $patient->antecedents) }}</textarea>
+                                <label for="medical_history">Medical History</label>
+<textarea name="medical_history" id="medical_history" cols="30" rows="5" class="form-control">{{ old('medical_history', $patient->medical_history) }}</textarea>
                             </div>
 
                             <div class="form-group">
