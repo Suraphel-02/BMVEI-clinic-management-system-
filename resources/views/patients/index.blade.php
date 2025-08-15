@@ -41,11 +41,11 @@
                                 @foreach ($patients as $patient)
                                     <tr role="row" class="{{ $counter % 2 == 0 ? 'even' : 'odd' }}">
                                         <td class="dtr-control sorting_1" tabindex="0">
-                                            {{ $patient['name'] }}</td>
-                                        <td>{{ $patient['lastname'] }}</td>
-                                        <td>{{ $patient['dob'] }}</td>
-                                        <td>{{ $patient['phone'] }}</td>
-                                        <td>{{ $patient['email'] }}</td>
+                                            {{ $patient->name }}</td>
+                                        <td>{{ $patient->lastname }}</td>
+                                        <td>{{ $patient->dob }}</td>
+                                        <td>{{ $patient->phone }}</td>
+                                        <td>{{ $patient->email }}</td>
                                         <td
                                             style="padding-right: -3.25rem;border-right-width: 0px;height: 37px;width: 95.833px;">
                                             <a href="{{ route('patients.show', [$patient]) }}"
@@ -58,6 +58,15 @@
                                                 style="height: 41px;min-width: 46px;margin: 0px;padding: 0px;">
                                                 <i class="fas fa-pen"></i>
                                             </a>
+                                            <form method="POST" action="{{ route('patients.destroy', [$patient]) }}" style="display: inline-block;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-del" 
+                                                style="height: 41px;min-width: 46px;margin: 0px;padding: 0px;" 
+                                                onclick="return confirm('Are you sure you want to delete this patient?')">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @php

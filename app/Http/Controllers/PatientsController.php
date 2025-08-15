@@ -1,7 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
+use App\Enums\UserRoles;
 use App\Helpers\ModelHelpers;
 use App\Http\Requests\PatientFormRequest;
 use App\Models\Patient;
@@ -19,25 +18,15 @@ class PatientsController extends Controller
      */
     public function index()
     {
-
-        $patients = collect(); // Initialize as an empty collection
-        try {
-            if (Auth::user()->role === 'admin' || Auth::user()->role === 'secretary') {
-                $patients = Patient::orderBy('lastname')->get();
-            } else {
-                $patients = Auth::user()
-                    ->patients()
-                    ->orderBy('lastname')
-                    ->get();
-
-            }
-        } catch (\Exception $e) {
-            // Log the error or handle it as appropriate
-            // For now, we'll just ensure $patients remains an empty collection
-            
+        if (auth()->user()->role == 1) { // Secretary
+            $patients = \App\Models\Patient::all();
+        } elseif (auth()->user()->role == 0) { // Doctor
+            $patients = auth()->user()->patients; // via relationship
+        } else { // Admin
+            $patients = \App\Models\Patient::all();
         }
-        // Ensure $patients is always passed to the view // For debugging
-        return view('patients.index', ['patients' => $patients]);
+
+        return view('patients.index', compact('patients'));
     }
 
     // find the  patients whose  names or last name match the query provided  
@@ -125,16 +114,16 @@ class PatientsController extends Controller
         // A list of doctor-patient scans
         $scans = $patient->scans()->where('user_id', $doctor_id)->get();
 
-        return view(
-            'patients.show',
-            [
-                'patient' => $patient,
-                'appointments' => $appointments,
-                'prescriptions'=>$prescriptions,
-                'scans'=>$scans,
-                'orientationLtrs'=>$orientationLtrs,
-            ]
-        );
+        $data = [
+            'patient' => $patient,
+            'appointments' => $appointments,
+            'prescriptions' => $prescriptions,
+            'scans' => $scans,
+            'orientationLtrs' => $orientationLtrs,
+            'patients' => \App\Models\Patient::all()
+        ];
+
+        return view('patients.show', $data);
     }
 
     /**
@@ -174,7 +163,7 @@ class PatientsController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        if (Auth::user()->role !== 'admin') {
+        if (Auth::user()->role != UserRoles::ADMIN->value && Auth::user()->role != UserRoles::SECRETARY->value) {
             abort(403, 'Unauthorized action.');
         }
 

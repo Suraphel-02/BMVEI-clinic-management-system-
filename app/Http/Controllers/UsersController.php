@@ -92,7 +92,15 @@ class UsersController extends Controller
     {
 
         // TODO check if $this  the update authorization 
-        return view('users.edit', ['user' => $user]);
+        $patients = collect();
+
+        if ($user->role->value == UserRoles::SECRETARY->value) {
+            $patients = \App\Models\Patient::all();
+        }
+        if ($user->role->value == UserRoles::SECRETARY->value) {
+            $patients = \App\Models\Patient::orderBy('lastname')->get();
+        }
+        return view('users.edit', compact('user', 'patients'));
     }
 
     /**

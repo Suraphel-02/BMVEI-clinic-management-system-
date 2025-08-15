@@ -53,11 +53,7 @@
                         </div>
                     @enderror
                 </div>
-                @php
-                    $f = $user->role->value == 1;
-                    var_dump($f);
-                    // echo '<h1>' . $user->role->value == 2 ? 'fuck' : 'sex' . '</h1>';
-                @endphp
+
                 <div class="form-group">
                     <label for="role">User role</label>
                     <select id="role" name="role" class=" @error('role') error-border @enderror form-control"
@@ -79,4 +75,89 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
+
+    @if ($user->role->value == 2 || $user->role->value == 1)
+        <div class="card">
+            <div class="card-body">
+                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="patients_table" class="table table-bordered table-striped dataTable dtr-inline"
+                                role="grid" aria-describedby="example1_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="patients_table"
+                                            aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                                            first name
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="patients_table"
+                                            aria-label="Browser: activate to sort column ascending">
+                                            last name
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="patients_table"
+                                            aria-label="Platform(s): activate to sort column ascending">
+                                            email
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="patients_table"
+                                            aria-label="CSS grade: activate to sort column ascending">
+                                            phone
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="patients_table"
+                                            aria-label="CSS grade: activate to sort column ascending">
+                                            date of birth
+                                        </th>
+                                        <th>
+                                            Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                                        $counter = 1;
+                                    @endphp
+                                    @foreach ($patients as $patient)
+                                        <tr role="row" class="{{ $counter % 2 == 0 ? 'even' : 'odd' }}">
+                                            <td class="dtr-control sorting_1" tabindex="0">
+                                                {{ $patient['name'] }}</td>
+                                            <td>{{ $patient['lastname'] }}</td>
+                                            <td>{{ $patient['email'] }}</td>
+                                            <td>{{ $patient['phone'] }}</td>
+                                            <td>{{ $patient['dob'] }}</td>
+                                            <td>
+                                                <a href="{{ route('patients.show', [$patient]) }}"
+                                                     class="btn btn-app btn-modify"
+                                                     style="height: 41px;min-width: 46px;margin: 0px;padding: 0px;">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @php
+                                            $counter++;
+                                        @endphp
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+@endsection
+
+@section('scripts')
+    <script>
+        $(function () {
+            $('#patients_table').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
 @endsection
