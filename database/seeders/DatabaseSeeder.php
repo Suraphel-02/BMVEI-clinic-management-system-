@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
         }
 
         // insert patient 
-        \App\Models\Patient::factory(5)->create();
+        \App\Models\Patient::factory(50)->create();
 
         // populate  doctor_patient table
         $data = [

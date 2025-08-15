@@ -17,7 +17,7 @@ class AppointmentFactory extends Factory
     public function definition()
     {
         return [
-            'date' => fake()->date('Y_m_d'),
+            'date' => fake()->date('Y-m-d'),
             'reason' => fake()->paragraph(),
             'patient_id' => fake()->numberBetween(1, 5),
             'user_id' => fake()->numberBetween(1, 2),

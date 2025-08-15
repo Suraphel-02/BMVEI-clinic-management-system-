@@ -34,7 +34,7 @@ Route::middleware(['auth', 'user-role:ADMIN'])->group(
     }
 );
 
-Route::middleware(['auth', 'user-role:DOCTOR|ADMIN'])->group(
+Route::middleware(['auth', 'user-role:DOCTOR|ADMIN|SECRETARY'])->group(
     function () {
         Route::resource('patients', PatientsController::class);
 
