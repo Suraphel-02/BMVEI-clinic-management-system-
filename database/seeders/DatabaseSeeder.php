@@ -29,32 +29,32 @@ class DatabaseSeeder extends Seeder
         $users = [
             [
                 'name' => 'Doctor',
-                'lastname' => 'Doctor_lastname',
-                'username' => 'Doctor_username',
+                'lastname' => 'suraphel_sisay',
+                'username' => 'Doctor_suraphel',
                 'email' => 'doctor@clinictlemcen.com',
                 'role' => 0,
                 'password' => Hash::make('123456'),
             ],
             [
                 'name' => 'Doctor2',
-                'lastname' => 'Doctor2_lastname',
-                'username' => 'Doctor2_username',
+                'lastname' => 'abebe_kabede',
+                'username' => 'Doctor_abebe',
                 'email' => 'doctor2@clinictlemcen.com',
                 'role' => 0,
                 'password' => Hash::make('123456'),
             ],
             [
                 'name' => 'Secretary',
-                'lastname' => 'Secretary_lastname',
-                'username' => 'Secretary_username',
+                'lastname' => 'betlehem_alemayew',
+                'username' => 'Secretary_betlehem',
                 'email' => 'secretary@clinictlemcen.com',
                 'role' => 1,
                 'password' => Hash::make('123456'),
             ],
             [
                 'name' => 'Admin',
-                'lastname' => 'Admin_lastname',
-                'username' => 'Admin_username',
+                'lastname' => 'yohanes_abel',
+                'username' => 'Admin_yohanes',
                 'email' => 'admin@clinictlemcen.com',
                 'role' => 2,
                 'password' => Hash::make('123456'),
@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
         }
 
         // insert patient 
-        \App\Models\Patient::factory(5)->create();
+        \App\Models\Patient::factory(50)->create();
 
         // populate  doctor_patient table
         $data = [

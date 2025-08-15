@@ -23,20 +23,22 @@ class AppointmentController extends Controller
     public function index()
     {
         $appointments = [];
+        $patients = [];
 
         // FIXME hide private appointment 
         // when we implement private patient(that are created by the doctor himself)
 
         // find all  appointment to secretary
-        if (UserRoles::isSecretary(Auth::user()->role)) {
+        if (UserRoles::isSecretary(Auth::user()->role) || UserRoles::isAdmin(Auth::user()->role)) {
             $appointments = Appointment::all();
+            $patients = Patient::all();
         }
         // find all  appointment assigned to a doctor
         else if (UserRoles::isDoctor(Auth::user()->role)) {
             $doctor = User::find(Auth::user()->id);
             $appointments = $doctor->appointments;
         }
-        return view('appointments.index', ['appointments' => $appointments]);
+        return view('appointments.index', ['appointments' => $appointments, 'patients' => $patients]);
     }
 
     /**
@@ -64,13 +66,14 @@ class AppointmentController extends Controller
         $patient->appointments()->create(
             array_merge(
                 $validated,
-                ['user_id' => $request->doctor_id],
+                ['user_id' => $request->doctor_id,
+                'date' => $validated['appointment_date']],
             )
         );
 
         // If a patient will have an appointment with a doctor 
         // we attachPatient to the current doctor
-        ModelHelpers::attachPatient($request->doctor_id, $patient->id);
+\App\Helpers\ModelHelpers::attachPatient($request->doctor_id, $patient->id);
 
 
         return back()
@@ -97,7 +100,10 @@ class AppointmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $patients = Patient::all();
+        $doctors = User::where('role', UserRoles::DOCTOR)->get();
+        return view('appointments.edit', compact('appointment', 'patients', 'doctors'));
     }
 
     /**
@@ -107,9 +113,18 @@ class AppointmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AppointmentFormRequest $request, $id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $validated = $request->validated();
+        $appointment->update(
+            array_merge(
+                $validated,
+                ['user_id' => $request->doctor_id,
+                'date' => $validated['appointment_date']],
+            )
+        );
+        return redirect()->route('appointment.index')->with('success', 'Appointment updated successfully');
     }
 
     /**
@@ -120,6 +135,8 @@ class AppointmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->delete();
+        return back()->with('success', 'Appointment deleted successfully');
     }
 }

@@ -25,37 +25,60 @@
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 
 <!-- SweetAlert2 -->
-<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <script>
-    $("#users_table").ready(function() {
+    $(document).ready(function() {
+        // DataTables initialization for patients_table
+        $("#patients_table").DataTable({
+            responsive: true,
+            paging: true,
+            searching: true,
+            ordering: true,
+            info: true,
+            retrieve: true
+        });
+        // DataTables initialization for users_table
         $("#users_table").DataTable({
             responsive: true
-        })
-    });
-    $("#patients_table").ready(function() {
-        $("#patients_table").DataTable({
-            responsive: true
-        })
-    });
-    $("#orientationLtrs_table").ready(function() {
+        });
         $("#orientationLtrs_table").DataTable({
             responsive: true
-        })
-    });
-    $("#scans_info").ready(function() {
+        });
         $("#scans_info").DataTable({
             responsive: true
-        })
-    });
-    $("#prescriptions_table").ready(function() {
+        });
         $("#prescriptions_table").DataTable({
             responsive: true
-        })
-    });
-    $("#appointment_table").ready(function() {
+        });
         $("#appointment_table").DataTable({
             responsive: true
-        })
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = $('#darkModeToggle');
+        const body = $('body');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.addClass('dark-mode');
+            darkModeToggle.find('i').removeClass('fa-moon').addClass('fa-sun');
+        } else {
+            body.removeClass('dark-mode');
+            darkModeToggle.find('i').removeClass('fa-sun').addClass('fa-moon');
+        }
+
+        darkModeToggle.on('click', function(e) {
+            e.preventDefault();
+            body.toggleClass('dark-mode');
+            if (body.hasClass('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                $(this).find('i').removeClass('fa-moon').addClass('fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                $(this).find('i').removeClass('fa-sun').addClass('fa-moon');
+            }
+        });
     });
 
     //Date time picker
@@ -86,6 +109,8 @@
     $(document).ready(function() {
 
         const token = "{{ csrf_token() }}"
+
+
         // Populate Select2 with AJAX data
 
         // 1. get the patients whose name and last names match the query provided

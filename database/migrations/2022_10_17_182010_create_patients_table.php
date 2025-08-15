@@ -18,13 +18,13 @@ return new class extends Migration {
                 $table->timestamps();
                 $table->string('name');
                 $table->string('lastname');
-                $table->integer('noSSocial');
+                $table->enum('sex', ['Male', 'Female', 'Other']);
                 $table->date('dob');
                 $table->string('phone');
                 $table->string('email');
                 $table->string('diseases')->nullable();
                 $table->string('allergies')->nullable();
-                $table->string('antecedents')->nullable();
+                $table->string('medical_history')->nullable();
                 $table->string('comments')->nullable();
             }
         );

@@ -12,6 +12,11 @@
     <!-- logout button -->
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
+            <a class="nav-link" href="#" role="button" id="darkModeToggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link logout" href="{{ route('logout') }}" role="button" title="logout">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
@@ -46,8 +51,7 @@
                         </p>
                     </a>
                 </li>
-                {{-- hide for secretary --}}
-                @if (Auth::user()->role->value != \App\Enums\UserRoles::SECRETARY->value)
+
                     <li class="nav-item">
                         <a href="{{ route('patients.index') }}" class="nav-link">
                             <i class=" nav-icon fas fa-plus-circle"></i>
@@ -56,7 +60,7 @@
                             </p>
                         </a>
                     </li>
-                @endif
+
 
                 <li class="nav-item">
                     <a href="{{ route('appointment.index') }}" class="nav-link">

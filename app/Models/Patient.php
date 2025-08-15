@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Patient extends Model
 {
-    use HasFactory, HasApiTokens, Notifiable;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +21,7 @@ class Patient extends Model
     protected $fillable = [
         'name',
         'lastname',
-        'noSSocial',
+       'sex',
         'dob',
         'phone',
         'email',

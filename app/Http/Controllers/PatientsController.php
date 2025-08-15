@@ -19,14 +19,24 @@ class PatientsController extends Controller
      */
     public function index()
     {
-        $patients = Auth::user()
-            ->patients(
-            )
-            ->orderBy(
-                'lastname'
-            )
-            ->get(
-            );
+
+        $patients = collect(); // Initialize as an empty collection
+        try {
+            if (Auth::user()->role === 'admin' || Auth::user()->role === 'secretary') {
+                $patients = Patient::orderBy('lastname')->get();
+            } else {
+                $patients = Auth::user()
+                    ->patients()
+                    ->orderBy('lastname')
+                    ->get();
+
+            }
+        } catch (\Exception $e) {
+            // Log the error or handle it as appropriate
+            // For now, we'll just ensure $patients remains an empty collection
+            
+        }
+        // Ensure $patients is always passed to the view // For debugging
         return view('patients.index', ['patients' => $patients]);
     }
 
@@ -162,8 +172,14 @@ class PatientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Patient $patient)
     {
-        //
+        if (Auth::user()->role !== 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
+
+        $patient->delete();
+
+        return redirect()->route('patients.index')->with('success', 'Patient deleted successfully.');
     }
 }

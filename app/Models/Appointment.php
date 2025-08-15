@@ -8,6 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     use HasFactory;
+    
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'date' => 'datetime',
+        'start_time' => 'datetime',
+        'end_time' => 'datetime',
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +29,7 @@ class Appointment extends Model
         'date',
         'start_time',
         'end_time',
-        'motivation',
+        'reason',
         'user_id',
     ];
 

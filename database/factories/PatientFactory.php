@@ -17,15 +17,16 @@ class PatientFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
-            'lastname' => fake()->name(),
-            'noSSocial' => fake()->numberBetween(10, 20),
-            'dob' => fake()->date('Y_m_d'),
+            'name' => $this->faker->randomElement(['Abebe', 'Kebede', 'Chala', 'Tigist', 'Aster', 'Mekdes', 'Solomon', 'Dawit', 'Sara', 'Lelisa']),
+            'lastname' => $this->faker->randomElement(['Kebede', 'Abebe', 'Lemma', 'Tadesse', 'Bekele', 'Desta', 'Fikru', 'Girma', 'Haile', 'Mamo']),
+            'sex' => $this->faker->randomElement(['Male', 'Female']),
+            'medical_history' => fake()->sentence(),
+            'dob' => fake()->date('Y-m-d'),
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->phoneNumber(),
             'diseases' => fake()->sentence(),
             'allergies' => fake()->sentence(),
-            'antecedents' => fake()->sentence(),
+
             'comments' => fake()->paragraph(),
         ];
     }

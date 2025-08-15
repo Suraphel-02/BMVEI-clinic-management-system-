@@ -24,10 +24,10 @@ class AppointmentFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required',
+            'appointment_date' => 'required',
             'start_time' => 'required',
             'end_time' => 'required',
-            'motivation' => 'required',
+            'reason' => 'required',
         ];
     }
 }
