@@ -1,0 +1,704 @@
+:root {
+    --background-color-light: #f4f6f9;
+    --text-color-light: #343a40;
+    --card-bg-light: #ffffff;
+    --card-header-bg-light: #f7f7f7;
+    --border-color-light: #dee2e6;
+}
+
+.dark-mode {
+    --background-color-dark: #343a40;
+    --text-color-dark: #f4f6f9;
+    --card-bg-dark: #454d55;
+    --card-header-bg-dark: #5a6268;
+    --border-color-dark: #6c757d;
+
+    background-color: var(--background-color-dark) !important;
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .content-wrapper, .dark-mode .main-footer {
+    background-color: var(--background-color-dark) !important;
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .card {
+    background-color: var(--card-bg-dark) !important;
+    color: var(--text-color-dark) !important;
+    border-color: var(--border-color-dark) !important;
+}
+
+.dark-mode .card-header {
+    background-color: var(--card-header-bg-dark) !important;
+    color: var(--text-color-dark) !important;
+    border-color: var(--border-color-dark) !important;
+}
+
+.dark-mode .table thead th {
+    border-bottom-color: var(--border-color-dark) !important;
+}
+
+.dark-mode .table td, .dark-mode .table th {
+    border-top-color: var(--border-color-dark) !important;
+}
+
+.dark-mode .form-control {
+    background-color: #5a6268;
+    color: #f4f6f9;
+    border-color: #6c757d;
+}
+
+.dark-mode .form-control::placeholder {
+    color: #ced4da;
+}
+
+.dark-mode .main-header .nav-link {
+    color: #f4f6f9 !important;
+}
+
+.dark-mode .main-sidebar .nav-link {
+    color: #c2c7d0 !important;
+}
+
+.dark-mode .main-sidebar .nav-link.active {
+    background-color: #007bff;
+    color: #ffffff !important;
+}
+
+.dark-mode .brand-link {
+    color: #f4f6f9 !important;
+}
+
+.dark-mode .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.dark-mode .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.dark-mode .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.dark-mode .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_filter input, .dark-mode .dataTables_wrapper .dataTables_length select {
+    background-color: #5a6268;
+    color: #f4f6f9;
+    border-color: #6c757d;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_info {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_length label, .dark-mode .dataTables_wrapper .dataTables_filter label {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_processing {
+    background-color: var(--card-bg-dark) !important;
+    color: var(--text-color-dark) !important;
+    border-color: var(--border-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner, .dark-mode .dataTables_wrapper .dataTables_scrollBody {
+    background-color: var(--card-bg-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner table, .dark-mode .dataTables_wrapper .dataTables_scrollBody table {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th, .dark-mode .dataTables_wrapper .dataTables_scrollBody tbody td {
+    border-color: var(--border-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_asc, .dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_desc, .dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_asc:after, .dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_desc:after {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting:after {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_asc:before, .dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_desc:before {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting:before {
+    color: var(--text-color-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_asc, .dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th.sorting_desc {
+    background-color: var(--card-header-bg-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollHeadInner thead th {
+    background-color: var(--card-header-bg-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.odd {
+    background-color: var(--card-bg-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.even {
+    background-color: var(--card-bg-dark) !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.odd:hover, .dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.even:hover {
+    background-color: #6c757d !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected {
+    background-color: #007bff !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected:hover {
+    background-color: #007bff !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td {
+    border-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_1 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_2 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_3 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_4 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_5 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_6 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_7 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_8 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_9 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_10 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_11 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_12 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_13 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_14 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_15 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_16 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_17 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_18 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_19 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_20 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_21 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_22 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_23 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_24 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_25 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_26 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_27 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_28 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_29 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_30 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_31 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_32 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_33 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_34 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_35 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_36 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_37 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_38 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_39 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_40 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_41 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_42 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_43 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_44 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_45 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_46 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_47 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_48 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_49 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_50 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_51 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_52 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_53 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_54 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_55 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_56 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_57 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_58 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_59 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_60 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_61 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_62 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_63 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_64 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_65 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_66 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_67 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_68 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_69 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_70 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_71 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_72 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_73 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_74 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_75 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_76 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_77 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_78 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_79 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_80 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_81 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_82 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_83 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_84 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_85 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_86 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_87 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_88 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_89 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_90 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_91 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_92 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_93 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_94 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_95 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_96 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_97 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_98 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_99 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_100 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_101 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_102 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_103 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_104 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_105 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_106 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_107 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_108 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_109 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_110 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_111 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_112 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_113 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_114 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_115 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_116 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_117 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_118 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_119 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_120 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_121 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_122 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_123 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_124 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_125 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_126 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_127 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_128 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr.selected td.sorting_129 {
+    background-color: #007bff !important;
+}
+
+.dark-mode .dataTables_wrapper .dataTables_scrollBody tbody tr
