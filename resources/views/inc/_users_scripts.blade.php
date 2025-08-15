@@ -53,6 +53,32 @@
         $("#appointment_table").DataTable({
             responsive: true
         });
+
+        // Dark mode toggle
+        const darkModeToggle = $('#darkModeToggle');
+        const body = $('body');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.addClass('dark-mode');
+            darkModeToggle.find('i').removeClass('fa-moon').addClass('fa-sun');
+        } else {
+            body.removeClass('dark-mode');
+            darkModeToggle.find('i').removeClass('fa-sun').addClass('fa-moon');
+        }
+
+        darkModeToggle.on('click', function(e) {
+            e.preventDefault();
+            body.toggleClass('dark-mode');
+            if (body.hasClass('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                $(this).find('i').removeClass('fa-moon').addClass('fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                $(this).find('i').removeClass('fa-sun').addClass('fa-moon');
+            }
+        });
     });
 
     //Date time picker
